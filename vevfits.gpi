@@ -1,0 +1,41 @@
+
+set terminal pdfcairo color  lw 0.5 dl 1.2 size 3.5,3 font "Helvetica,14" 
+set output "work.pdf"
+set nokey
+gv_xval = 3.5*72
+gv_yval = 3.*72
+gvx(x) =  (x-50.)/(gv_xval) ;
+gvy(y) =  (y-50.)/(gv_yval) ;
+set style line 1 lw 1 pt 6 ps 0.2 lc rgb "red"
+set style line 2 lw 1 pt 6 ps 0.2 lc rgb "dark-spring-green"
+set style line 3 lw 1 pt 6 ps 0.2 lc rgb "medium-blue"
+set style line 4 lw 1 pt 6 ps 0.2 lc rgb "dark-violet"
+set style line 5 lw 1 pt 6 ps 0.2 lc rgb "orange"
+set style line 6 lw 1 ps 1 lc rgb "dark-pink"
+set style line 7 lw 1 ps 1 lc rgb "dark-grey"
+set style line 8 lw 1 ps 1 lc rgb "dark-orange"
+
+plot [0:0.06]  \
+"vevscan_Nxxx_m-0501265_h000000_c00500_M2.txt" using (1./$2):3:4 w errorbars  ls 1,  \
+"vevscan_Nxxx_m-0501265_h000000_c00500_fit1.txt" using 1:2 w l ls 2, \
+"vevscan_Nxxx_m-0501265_h000000_c00500_fit2.txt" using 1:2 w l ls 3, \
+"vevscan_Nxxx_m-0482360_h000000_c00500_fit1.txt" using 1:2 w l ls 2, \
+"vevscan_Nxxx_m-0483621_h000000_c00500_fit1.txt" using 1:2 w l ls 2, \
+"vevscan_Nxxx_m-0486141_h000000_c00500_fit1.txt" using 1:2 w l ls 2, \
+"vevscan_Nxxx_m-0491183_h000000_c00500_fit1.txt" using 1:2 w l ls 2, \
+"vevscan_Nxxx_m-0501265_h000000_c00500_fit1.txt" using 1:2 w l ls 2, \
+"vevscan_Nxxx_m-0521430_h000000_c00500_fit1.txt" using 1:2 w l ls 2, \
+"vevscan_Nxxx_m-0482360_h000000_c00500_fit2.txt" using 1:2 w l ls 3, \
+"vevscan_Nxxx_m-0483621_h000000_c00500_fit2.txt" using 1:2 w l ls 3, \
+"vevscan_Nxxx_m-0486141_h000000_c00500_fit2.txt" using 1:2 w l ls 3, \
+"vevscan_Nxxx_m-0491183_h000000_c00500_fit2.txt" using 1:2 w l ls 3, \
+"vevscan_Nxxx_m-0501265_h000000_c00500_fit2.txt" using 1:2 w l ls 3, \
+"vevscan_Nxxx_m-0521430_h000000_c00500_fit2.txt" using 1:2 w l ls 3, \
+"vevscan_Nxxx_m-0482360_h000000_c00500_M2.txt"  using (1./$2):3:4 w errorbars  ls 1,  \
+"vevscan_Nxxx_m-0483621_h000000_c00500_M2.txt"  using (1./$2):3:4 w errorbars  ls 1,  \
+"vevscan_Nxxx_m-0486141_h000000_c00500_M2.txt"  using (1./$2):3:4 w errorbars  ls 1,  \
+"vevscan_Nxxx_m-0491183_h000000_c00500_M2.txt"  using (1./$2):3:4 w errorbars  ls 1,  \
+"vevscan_Nxxx_m-0501265_h000000_c00500_M2.txt"   using (1./$2):3:4 w errorbars  ls 1,  \
+"vevscan_Nxxx_m-0521430_h000000_c00500_M2.txt"   using (1./$2):3:4 w errorbars  ls 1,  \
+
+
